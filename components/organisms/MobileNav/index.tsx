@@ -86,7 +86,7 @@ export const MobileNav = ({ onOpen, ...rest }: Props) => {
                 >
                   <Text fontSize="sm">Taynara Batista</Text>
                   <Text fontSize="xs" color="gray.600">
-                    Admin
+                    Admin(soon)
                   </Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>

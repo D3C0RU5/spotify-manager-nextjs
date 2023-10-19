@@ -23,8 +23,8 @@ import { MobileNav } from "../MobileNav";
 import { Content } from "../Content";
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Home", icon: FiHome },
-  { name: "Contact", icon: FiMail, onClick: () => console.log("oi") },
+  { name: "Home(soon)", icon: FiHome },
+  { name: "Contact(soon)", icon: FiMail, onClick: () => console.log("oi") },
   // { name: "Trending", icon: FiTrendingUp },
   // { name: "Explore", icon: FiCompass },
   // { name: "Favourites", icon: FiStar },

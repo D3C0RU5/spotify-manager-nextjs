@@ -16,6 +16,7 @@ interface Props {
   status: string;
   debt: string;
   warning: boolean;
+  avatar: string;
 }
 
 export const CardPerson = ({
@@ -24,32 +25,27 @@ export const CardPerson = ({
   status,
   debt,
   warning,
+  avatar,
 }: Props) => {
   return (
     <Box
-      maxW={"270px"}
       w={"full"}
-      bg={useColorModeValue("white", "gray.800")}
+      bg={useColorModeValue("white", "gray.900")}
       boxShadow={"2xl"}
       rounded={"md"}
       overflow={"hidden"}
-      m={2}
     >
       <Image
         h={"120px"}
         w={"full"}
-        src={
-          "https://images.unsplash.com/photo-1612865547334-09cb8cb455da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-        }
+        src="/wallpaper.gif"
         objectFit="cover"
         alt="#"
       />
       <Flex justify={"center"} mt={-12}>
         <Avatar
           size={"xl"}
-          src={
-            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-          }
+          src={avatar}
           css={{
             border: "2px solid white",
           }}
@@ -61,12 +57,20 @@ export const CardPerson = ({
           <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
             {name}
           </Heading>
-          <Text color={"gray.500"}>{subtitle}</Text>
+          <Text color={"gray.500"} textAlign={"center"}>
+            {subtitle}
+          </Text>
         </Stack>
 
         <Stack direction={"row"} justify={"center"} spacing={6}>
           <Stack spacing={0} align={"center"}>
-            <Text fontWeight={600}>R$ {debt}</Text>
+            <Text
+              fontWeight={600}
+              color={warning ? "red.500" : "green.500"}
+              fontSize={20}
+            >
+              R$ {debt}
+            </Text>
             <Text fontSize={"sm"} color={"gray.500"}>
               {status}
             </Text>
@@ -84,7 +88,7 @@ export const CardPerson = ({
             boxShadow: "lg",
           }}
         >
-          Send a message
+          Send a message (soon)
         </Button>
       </Box>
     </Box>
