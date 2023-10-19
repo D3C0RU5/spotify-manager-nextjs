@@ -17,7 +17,7 @@ export const Content = () => {
     >
       <CardPerson
         name="Guilherme"
-        debt="6.00"
+        debt="-6.00"
         status="Em dívida"
         subtitle="Paranaense com muito amor!"
         avatar="/guilherme.png"
