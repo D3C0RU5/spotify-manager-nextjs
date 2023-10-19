@@ -18,7 +18,7 @@ export const Content = () => {
       <CardPerson
         name="Guilherme"
         debt="-6.00"
-        status="Em dívida"
+        status="Em dívida seu safado"
         subtitle="Paranaense com muito amor!"
         avatar="/guilherme.png"
         warning
@@ -49,8 +49,8 @@ export const Content = () => {
       />
       <CardPerson
         name="Henrique"
-        debt="0.00"
-        status="Em dia"
+        debt="9,999,999.99"
+        status="140 mil anos pagos"
         subtitle="Carlos tbm"
         avatar="henrique.jpg"
         warning={false}
