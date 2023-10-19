@@ -59,7 +59,7 @@ export const Content = () => {
         name="Gisele"
         debt="0.00"
         status="Em dia"
-        subtitle="A psicologa chegou"
+        subtitle="A psicóloga chegou"
         avatar="/gisele.jpeg"
         warning={false}
       />
