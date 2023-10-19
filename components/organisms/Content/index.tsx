@@ -1,5 +1,5 @@
 import { Grid, useColorModeValue } from "@chakra-ui/react";
-import { CardPerson } from "../CardPerson";
+import { CardPerson, StatusTagEnum } from "../CardPerson";
 
 export const Content = () => {
   return (
@@ -17,11 +17,11 @@ export const Content = () => {
     >
       <CardPerson
         name="Guilherme"
-        debt="-6.00"
-        status="Em dívida seu safado"
+        debt="0.00"
+        status="Em dia amor"
         subtitle="Paranaense com muito amor!"
         avatar="/guilherme.png"
-        warning
+        statusTag={StatusTagEnum.STAR}
       />
       <CardPerson
         name="Taynara"
@@ -29,7 +29,7 @@ export const Content = () => {
         status="Em dia"
         subtitle="Ditadura da xoxota!!!"
         avatar="/taynara.jpg"
-        warning={false}
+        statusTag={StatusTagEnum.NORMAL}
       />
       <CardPerson
         name="Lyvia"
@@ -37,7 +37,6 @@ export const Content = () => {
         status="Em dia"
         subtitle="Guten tag"
         avatar="/lyvia.png"
-        warning={false}
       />
       <CardPerson
         name="Carlos"
@@ -45,7 +44,6 @@ export const Content = () => {
         status="Em dia"
         subtitle="Taylor fã s2"
         avatar="/carlos.png"
-        warning={false}
       />
       <CardPerson
         name="Henrique"
@@ -53,7 +51,6 @@ export const Content = () => {
         status="140 mil anos pagos"
         subtitle="Carlos tbm"
         avatar="henrique.jpg"
-        warning={false}
       />
       <CardPerson
         name="Gisele"
@@ -61,7 +58,6 @@ export const Content = () => {
         status="Em dia"
         subtitle="A psicóloga chegou"
         avatar="/gisele.jpeg"
-        warning={false}
       />
     </Grid>
   );

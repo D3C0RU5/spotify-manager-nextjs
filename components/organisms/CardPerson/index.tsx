@@ -10,12 +10,17 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+export enum StatusTagEnum {
+  NORMAL = 0,
+  WARN = 1,
+  STAR = 2,
+}
 interface Props {
   name: string;
   subtitle: string;
   status: string;
   debt: string;
-  warning: boolean;
+  statusTag?: StatusTagEnum;
   avatar: string;
 }
 
@@ -24,9 +29,32 @@ export const CardPerson = ({
   subtitle,
   status,
   debt,
-  warning,
+  statusTag = StatusTagEnum.NORMAL,
   avatar,
 }: Props) => {
+  const ButtonColor = () => {
+    if (statusTag === StatusTagEnum.NORMAL) {
+      return "green.500";
+    }
+    if (statusTag === StatusTagEnum.STAR) {
+      return "linear-gradient(20deg,#eeb755,#f6db02)";
+    }
+    if (statusTag === StatusTagEnum.WARN) {
+      return "red.500";
+    }
+  };
+  const statusColor = () => {
+    if (statusTag === StatusTagEnum.NORMAL) {
+      return "green.500";
+    }
+    if (statusTag === StatusTagEnum.STAR) {
+      return "#eeb755";
+    }
+    if (statusTag === StatusTagEnum.WARN) {
+      return "red.500";
+    }
+  };
+
   return (
     <Box
       w={"full"}
@@ -38,7 +66,11 @@ export const CardPerson = ({
       <Image
         h={"120px"}
         w={"full"}
-        src="/wallpaper.gif"
+        src={
+          statusTag === StatusTagEnum.STAR
+            ? "/yellow-spotify.webp"
+            : "/wallpaper.gif"
+        }
         objectFit="cover"
         alt="#"
       />
@@ -64,14 +96,10 @@ export const CardPerson = ({
 
         <Stack direction={"row"} justify={"center"} spacing={6}>
           <Stack spacing={0} align={"center"}>
-            <Text
-              fontWeight={600}
-              color={warning ? "red.500" : "green.500"}
-              fontSize={20}
-            >
+            <Text fontWeight={600} color={statusColor()} fontSize={20}>
               R$ {debt}
             </Text>
-            <Text fontSize={"sm"} color={"gray.500"}>
+            <Text fontSize={"sm"} color="gray.400">
               {status}
             </Text>
           </Stack>
@@ -80,7 +108,7 @@ export const CardPerson = ({
         <Button
           w={"full"}
           mt={8}
-          bg={warning ? "red.500" : "green.500"}
+          bg={ButtonColor()}
           color={"white"}
           rounded={"md"}
           _hover={{
