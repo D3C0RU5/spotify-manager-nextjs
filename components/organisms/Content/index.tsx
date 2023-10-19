@@ -35,7 +35,7 @@ export const Content = () => {
         name="Lyvia"
         debt="0.00"
         status="Em dia"
-        subtitle="Guten tag"
+        subtitle="Guten Tag"
         avatar="/lyvia.png"
       />
       <CardPerson
