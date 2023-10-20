@@ -7,18 +7,11 @@ import {
   DrawerContent,
   useDisclosure,
 } from "@chakra-ui/react";
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMail,
-} from "react-icons/fi";
+import { FiHome, FiMail } from "react-icons/fi";
 import {
   LinkItemProps,
   SidebarContent,
-} from "@/components/molecules/SidebarContent";
+} from "@/src/components/molecules/SidebarContent";
 import { MobileNav } from "../MobileNav";
 import { Content } from "../Content";
 

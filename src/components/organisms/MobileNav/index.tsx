@@ -1,3 +1,5 @@
+"use client";
+
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Avatar,
@@ -17,6 +19,7 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { FiBell, FiChevronDown, FiMenu } from "react-icons/fi";
 
 interface Props extends FlexProps {
@@ -25,6 +28,7 @@ interface Props extends FlexProps {
 
 export const MobileNav = ({ onOpen, ...rest }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { data: session } = useSession();
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -72,19 +76,14 @@ export const MobileNav = ({ onOpen, ...rest }: Props) => {
               _focus={{ boxShadow: "none" }}
             >
               <HStack>
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                  }
-                />
+                <Avatar size={"sm"} src={session?.user?.image as string} />
                 <VStack
                   display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Taynara Batista</Text>
+                  <Text fontSize="sm">{session?.user?.name}</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin(soon)
                   </Text>
@@ -102,7 +101,9 @@ export const MobileNav = ({ onOpen, ...rest }: Props) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={() => (session?.user ? signOut() : signIn())}>
+                {session?.user ? "Sign out" : "Sign in"}
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>
