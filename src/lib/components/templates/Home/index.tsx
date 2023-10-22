@@ -1,5 +1,5 @@
-import { ListCards } from "../../organisms/ListCards";
-import { Panel } from "../../organisms/Panel";
+import { ListCards } from '../../organisms/ListCards';
+import { Panel } from '../../organisms/Panel';
 
 export default function HomeTemplate() {
   return (

@@ -1,5 +1,5 @@
-import Google from "next-auth/providers/google";
-import type { NextAuthOptions } from "next-auth";
+import Google from 'next-auth/providers/google';
+import type { NextAuthOptions } from 'next-auth';
 
 export const authOptions: NextAuthOptions = {
   providers: [

@@ -8,7 +8,7 @@ import {
   Stack,
   Button,
   useColorModeValue,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 export enum StatusTagEnum {
   NORMAL = 0,
@@ -34,80 +34,80 @@ export const CardPerson = ({
 }: Props) => {
   const ButtonColor = () => {
     if (statusTag === StatusTagEnum.NORMAL) {
-      return "green.500";
+      return 'green.500';
     }
     if (statusTag === StatusTagEnum.STAR) {
-      return "linear-gradient(20deg,#eeb755,#f6db02)";
+      return 'linear-gradient(20deg,#eeb755,#f6db02)';
     }
     if (statusTag === StatusTagEnum.WARN) {
-      return "red.500";
+      return 'red.500';
     }
   };
   const statusColor = () => {
     if (statusTag === StatusTagEnum.NORMAL) {
-      return "green.500";
+      return 'green.500';
     }
     if (statusTag === StatusTagEnum.STAR) {
-      return "#eeb755";
+      return '#eeb755';
     }
     if (statusTag === StatusTagEnum.WARN) {
-      return "red.500";
+      return 'red.500';
     }
   };
 
   return (
-    <Box w={"full"} boxShadow={"2xl"} rounded={"md"} overflow={"hidden"}>
+    <Box w={'full'} boxShadow={'2xl'} rounded={'md'} overflow={'hidden'}>
       <Image
-        h={"120px"}
-        w={"full"}
+        h={'120px'}
+        w={'full'}
         src={
           statusTag === StatusTagEnum.STAR
-            ? "/yellow-spotify.webp"
-            : "/wallpaper.gif"
+            ? '/yellow-spotify.webp'
+            : '/wallpaper.gif'
         }
-        objectFit="cover"
-        alt="#"
+        objectFit='cover'
+        alt='#'
       />
-      <Flex justify={"center"} mt={-12}>
+      <Flex justify={'center'} mt={-12}>
         <Avatar
-          size={"xl"}
+          size={'xl'}
           src={avatar}
           css={{
-            border: "2px solid white",
+            border: '2px solid white',
           }}
         />
       </Flex>
 
       <Box p={6}>
-        <Stack spacing={0} align={"center"} mb={5}>
-          <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
+        <Stack spacing={0} align={'center'} mb={5}>
+          <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
             {name}
           </Heading>
-          <Text color={"gray.500"} textAlign={"center"}>
+          <Text color={'gray.500'} textAlign={'center'}>
             {subtitle}
           </Text>
         </Stack>
 
-        <Stack direction={"row"} justify={"center"} spacing={6}>
-          <Stack spacing={0} align={"center"}>
+        <Stack direction={'row'} justify={'center'} spacing={6}>
+          <Stack spacing={0} align={'center'}>
             <Text fontWeight={600} color={statusColor()} fontSize={20}>
               R$ {debt}
             </Text>
-            <Text fontSize={"sm"} color="gray.400">
+            <Text fontSize={'sm'} color='gray.400'>
               {status}
             </Text>
           </Stack>
         </Stack>
 
         <Button
-          w={"full"}
+          w={'full'}
           mt={8}
           bg={ButtonColor()}
-          color={"white"}
-          rounded={"md"}
+          color={'white'}
+          rounded={'md'}
           _hover={{
-            transform: "translateY(-2px)",
-            boxShadow: "lg",
+            transform: 'translateY(-2px)',
+            boxShadow: 'lg',
           }}
         >
           Send a message (soon)

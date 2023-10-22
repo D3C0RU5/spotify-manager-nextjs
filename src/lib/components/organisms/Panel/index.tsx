@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { Box, Drawer, DrawerContent, useDisclosure } from "@chakra-ui/react";
-import { FiHome, FiMail } from "react-icons/fi";
-import { MobileNav } from "../MobileNav";
-import { LinkItemProps, SidebarContent } from "../../molecules/SidebarContent";
+import { Box, Drawer, DrawerContent, useDisclosure } from '@chakra-ui/react';
+import { FiHome, FiMail } from 'react-icons/fi';
+import { MobileNav } from '../MobileNav';
+import { LinkItemProps, SidebarContent } from '../../molecules/SidebarContent';
 
 const LinkItems: Array<LinkItemProps> = [
   {
-    name: "Home",
+    name: 'Home',
     icon: FiHome,
-    routePath: "/",
+    routePath: '/',
   },
   {
-    name: "Contact",
+    name: 'Contact',
     icon: FiMail,
-    routePath: "/contact",
+    routePath: '/contact',
   },
   // { name: "Trending", icon: FiTrendingUp },
   // { name: "Explore", icon: FiCompass },
@@ -29,19 +29,19 @@ interface Props {
 export const Panel = ({ children }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh">
+    <Box minH='100vh'>
       <SidebarContent
         linkItems={LinkItems}
         onClose={() => onClose}
-        display={{ base: "none", md: "block" }}
+        display={{ base: 'none', md: 'block' }}
       />
       <Drawer
         isOpen={isOpen}
-        placement="left"
+        placement='left'
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full"
+        size='full'
       >
         <DrawerContent>
           <SidebarContent linkItems={LinkItems} onClose={onClose} />

@@ -1,4 +1,4 @@
-import { Panel } from "../../organisms/Panel";
+import { Panel } from '../../organisms/Panel';
 
 export default function ContactTemplate() {
   return (

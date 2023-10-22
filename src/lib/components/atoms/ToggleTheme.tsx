@@ -1,6 +1,6 @@
-import { ChakraComponent, Button, ButtonProps } from "@chakra-ui/react";
+import { ChakraComponent, Button, ButtonProps } from '@chakra-ui/react';
 
-type ButtonComponent = ChakraComponent<"button", {}>;
+type ButtonComponent = ChakraComponent<'button', {}>;
 
 export const ToggleTheme = ((props: ButtonProps) => (
   <Button {...props} />

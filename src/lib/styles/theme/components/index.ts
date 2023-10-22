@@ -1,4 +1,4 @@
-import { CustomBox } from "./customBox";
+import { CustomBox } from './customBox';
 
 export const components = {
   CustomBox,

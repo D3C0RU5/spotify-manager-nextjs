@@ -1,5 +1,5 @@
-import { extendTheme } from "@chakra-ui/react";
-import { components } from "./components";
+import { extendTheme } from '@chakra-ui/react';
+import { components } from './components';
 
 const customTheme = extendTheme({ components });
 
