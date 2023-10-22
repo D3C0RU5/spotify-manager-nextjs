@@ -56,13 +56,7 @@ export const CardPerson = ({
   };
 
   return (
-    <Box
-      w={"full"}
-      bg={useColorModeValue("white", "gray.900")}
-      boxShadow={"2xl"}
-      rounded={"md"}
-      overflow={"hidden"}
-    >
+    <Box w={"full"} boxShadow={"2xl"} rounded={"md"} overflow={"hidden"}>
       <Image
         h={"120px"}
         w={"full"}

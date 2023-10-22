@@ -1,20 +1,28 @@
 import { Box, Flex, FlexProps, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
+import { useRouter } from "next/navigation";
 
 interface Props extends FlexProps {
   icon: IconType;
   children: React.ReactNode;
-  onClick?: () => void | undefined;
+  routePath?: string | undefined;
 }
 
-export const NavItem = ({ icon, children, onClick, ...rest }: Props) => {
+export const NavItem = ({ icon, children, routePath, ...rest }: Props) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (routePath) {
+      router.replace(routePath);
+    }
+  };
+
   return (
     <Box
       as="a"
-      href="#"
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
-      onClick={onClick}
+      onClick={handleClick}
     >
       <Flex
         align="center"

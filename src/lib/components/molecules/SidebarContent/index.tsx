@@ -12,7 +12,7 @@ import { NavItem } from "../NavItem";
 export interface LinkItemProps {
   name: string;
   icon: IconType;
-  onClick?: () => void;
+  routePath?: string;
 }
 
 interface Props extends BoxProps {
@@ -23,10 +23,7 @@ interface Props extends BoxProps {
 export const SidebarContent = ({ onClose, linkItems, ...rest }: Props) => {
   return (
     <Box
-      transition="3s ease"
-      bg={useColorModeValue("white", "gray.900")}
-      borderRight="1px"
-      borderRightColor={useColorModeValue("gray.200", "gray.700")}
+      borderRightWidth="1px"
       w={{ base: "full", md: 60 }}
       pos="fixed"
       h="full"
@@ -39,7 +36,7 @@ export const SidebarContent = ({ onClose, linkItems, ...rest }: Props) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {linkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon} onClick={link.onClick}>
+        <NavItem key={link.name} icon={link.icon} routePath={link.routePath}>
           {link.name}
         </NavItem>
       ))}

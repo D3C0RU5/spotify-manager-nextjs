@@ -1,34 +1,35 @@
 "use client";
 
-import {
-  Box,
-  useColorModeValue,
-  Drawer,
-  DrawerContent,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Drawer, DrawerContent, useDisclosure } from "@chakra-ui/react";
 import { FiHome, FiMail } from "react-icons/fi";
-import {
-  LinkItemProps,
-  SidebarContent,
-} from "@/src/components/molecules/SidebarContent";
 import { MobileNav } from "../MobileNav";
-import { Content } from "../Content";
+import { LinkItemProps, SidebarContent } from "../../molecules/SidebarContent";
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Home(soon)", icon: FiHome },
-  { name: "Contact(soon)", icon: FiMail, onClick: () => console.log("oi") },
+  {
+    name: "Home",
+    icon: FiHome,
+    routePath: "/",
+  },
+  {
+    name: "Contact",
+    icon: FiMail,
+    routePath: "/contact",
+  },
   // { name: "Trending", icon: FiTrendingUp },
   // { name: "Explore", icon: FiCompass },
   // { name: "Favourites", icon: FiStar },
   // { name: "Settings", icon: FiSettings },
 ];
 
-export const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+interface Props {
+  children: React.ReactNode;
+}
 
+export const Panel = ({ children }: Props) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box minH="100vh">
       <SidebarContent
         linkItems={LinkItems}
         onClose={() => onClose}
@@ -46,10 +47,9 @@ export const Header = () => {
           <SidebarContent linkItems={LinkItems} onClose={onClose} />
         </DrawerContent>
       </Drawer>
-      {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        <Content />
+      <Box ml={{ base: 0, md: 60 }} p={6}>
+        {children}
       </Box>
     </Box>
   );

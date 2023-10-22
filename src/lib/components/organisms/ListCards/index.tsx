@@ -1,7 +1,9 @@
-import { Grid, useColorModeValue } from "@chakra-ui/react";
+"use client";
+
+import { Grid } from "@chakra-ui/react";
 import { CardPerson, StatusTagEnum } from "../CardPerson";
 
-export const Content = () => {
+export const ListCards = () => {
   return (
     <Grid
       templateColumns={{
@@ -11,9 +13,7 @@ export const Content = () => {
         "2xl": "repeat(5, 1fr)",
       }}
       gap={6}
-      bg={useColorModeValue("white", "gray.800")}
       justifyItems={"center"}
-      p={6}
     >
       <CardPerson
         name="Guilherme"

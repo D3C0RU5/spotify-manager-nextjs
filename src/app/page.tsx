@@ -1,5 +1,5 @@
-import HomePage from "@/src/components/pages/home";
+import HomePage from "../lib/components/pages/Home";
 
-export default function AboutRoute() {
+export default function HomeRoute() {
   return <HomePage />;
 }

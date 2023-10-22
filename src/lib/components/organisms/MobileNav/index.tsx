@@ -4,7 +4,6 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Avatar,
   Box,
-  Button,
   Flex,
   FlexProps,
   HStack,
@@ -21,6 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { FiBell, FiChevronDown, FiMenu } from "react-icons/fi";
+import { ToggleTheme } from "../../atoms/ToggleTheme";
 
 interface Props extends FlexProps {
   onOpen: () => void;
@@ -35,9 +35,7 @@ export const MobileNav = ({ onOpen, ...rest }: Props) => {
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue("white", "gray.900")}
       borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue("gray.200", "gray.700")}
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >
@@ -65,9 +63,9 @@ export const MobileNav = ({ onOpen, ...rest }: Props) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
-        <Button onClick={toggleColorMode} mr={3}>
+        <ToggleTheme onClick={toggleColorMode} mr={3}>
           {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        </Button>
+        </ToggleTheme>
         <Flex alignItems={"center"}>
           <Menu>
             <MenuButton
