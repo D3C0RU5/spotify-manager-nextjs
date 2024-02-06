@@ -17,10 +17,26 @@ export const ListCards = () => {
     >
       <CardPerson
         name='Guilherme'
-        debt='0.00'
-        status='Em dia amor'
+        debt='12.00'
+        status='Acabou o dinheiro no Paraná!'
         subtitle='Paranaense com muito amor!'
         avatar='/guilherme.png'
+        statusTag={StatusTagEnum.WARN}
+      />
+      <CardPerson
+        name='Gisele'
+        debt='6.00'
+        status='Psicologia por amor não dá dinheiro!'
+        subtitle='A psicóloga chegou'
+        avatar='/gisele.jpeg'
+        statusTag={StatusTagEnum.WARN}
+      />
+      <CardPerson
+        name='Lyvia'
+        debt='0.00'
+        status='O Oscar do pagamento em dia!'
+        subtitle='Guten Tag'
+        avatar='/lyvia.png'
         statusTag={StatusTagEnum.STAR}
       />
       <CardPerson
@@ -29,14 +45,6 @@ export const ListCards = () => {
         status='Em dia'
         subtitle='Ditadura da xoxota!!!'
         avatar='/taynara.jpg'
-        statusTag={StatusTagEnum.NORMAL}
-      />
-      <CardPerson
-        name='Lyvia'
-        debt='0.00'
-        status='Em dia'
-        subtitle='Guten Tag'
-        avatar='/lyvia.png'
       />
       <CardPerson
         name='Carlos'
@@ -47,17 +55,10 @@ export const ListCards = () => {
       />
       <CardPerson
         name='Henrique'
-        debt='9,999,999.99'
+        debt='9,999,981.99'
         status='140 mil anos pagos'
         subtitle='Carlos tbm'
         avatar='henrique.jpg'
-      />
-      <CardPerson
-        name='Gisele'
-        debt='0.00'
-        status='Em dia'
-        subtitle='A psicóloga chegou'
-        avatar='/gisele.jpeg'
       />
     </Grid>
   );
