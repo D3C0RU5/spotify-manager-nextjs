@@ -18,26 +18,26 @@ export const ListCards = () => {
       <CardPerson
         name='Guilherme'
         debt='0.00'
-        status='Em dia'
+        status='Deve março'
         subtitle='Paranaense com muito amor!'
         avatar='/guilherme.png'
-        statusTag={StatusTagEnum.NORMAL}
+        statusTag={StatusTagEnum.WARN}
       />
       <CardPerson
         name='Gisele'
         debt='0.00'
-        status='Em dia'
+        status='O Oscar do pagamento em dia! (Março)'
         subtitle='A psicóloga chegou'
         avatar='/gisele.jpeg'
-        statusTag={StatusTagEnum.NORMAL}
+        statusTag={StatusTagEnum.STAR}
       />
       <CardPerson
         name='Lyvia'
         debt='0.00'
-        status='Em dia'
+        status='O Oscar do pagamento em dia! (Abril)'
         subtitle='Guten Tag'
         avatar='/lyvia.png'
-        statusTag={StatusTagEnum.NORMAL}
+        statusTag={StatusTagEnum.STAR}
       />
       <CardPerson
         name='Taynara'
@@ -48,11 +48,11 @@ export const ListCards = () => {
       />
       <CardPerson
         name='Carlos'
-        debt='0.00'
-        status='O Oscar do pagamento em dia!'
+        debt='6.00'
+        status='Deve março'
         subtitle='Taylor fã s2'
         avatar='/carlos.png'
-        statusTag={StatusTagEnum.STAR}
+        statusTag={StatusTagEnum.WARN}
       />
       <CardPerson
         name='Henrique'
