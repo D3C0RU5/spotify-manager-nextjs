@@ -16,17 +16,9 @@ export const ListCards = () => {
       justifyItems={'center'}
     >
       <CardPerson
-        name='Guilherme'
-        debt='0.00'
-        status='Deve março'
-        subtitle='Paranaense com muito amor!'
-        avatar='/guilherme.png'
-        statusTag={StatusTagEnum.WARN}
-      />
-      <CardPerson
         name='Gisele'
         debt='0.00'
-        status='O Oscar do pagamento em dia! (Março)'
+        status='🏆 Oscar do pagamento em dia! 🏆'
         subtitle='A psicóloga chegou'
         avatar='/gisele.jpeg'
         statusTag={StatusTagEnum.STAR}
@@ -34,10 +26,16 @@ export const ListCards = () => {
       <CardPerson
         name='Lyvia'
         debt='0.00'
-        status='O Oscar do pagamento em dia! (Abril)'
+        status='Em dia'
         subtitle='Guten Tag'
         avatar='/lyvia.png'
-        statusTag={StatusTagEnum.STAR}
+      />
+      <CardPerson
+        name='Guilherme'
+        debt='0.00'
+        status='Em dia'
+        subtitle='Paranaense com muito amor!'
+        avatar='/guilherme.png'
       />
       <CardPerson
         name='Taynara'
@@ -47,19 +45,18 @@ export const ListCards = () => {
         avatar='/taynara.jpg'
       />
       <CardPerson
-        name='Carlos'
-        debt='6.00'
-        status='Deve março'
-        subtitle='Taylor fã s2'
-        avatar='/carlos.png'
-        statusTag={StatusTagEnum.WARN}
-      />
-      <CardPerson
         name='Henrique'
         debt='9,999,981.99'
         status='140 mil anos pagos'
         subtitle='Carlos tbm'
         avatar='henrique.jpg'
+      />
+      <CardPerson
+        name='Carlos'
+        debt='0.00'
+        status='Em dia, mas foi o último, decepção'
+        subtitle='Taylor fã s2'
+        avatar='/carlos.png'
       />
     </Grid>
   );
