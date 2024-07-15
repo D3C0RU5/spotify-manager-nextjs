@@ -24,18 +24,20 @@ export const ListCards = () => {
         statusTag={StatusTagEnum.STAR}
       />
       <CardPerson
-        name='Lyvia'
-        debt='0.00'
-        status='Em dia'
-        subtitle='Guten Tag'
-        avatar='/lyvia.png'
-      />
-      <CardPerson
         name='Guilherme'
-        debt='0.00'
-        status='Em dia'
+        debt='12.00'
+        status='Deve Junho e Julho'
         subtitle='Paranaense com muito amor!'
         avatar='/guilherme.png'
+        statusTag={StatusTagEnum.WARN}
+      />
+      <CardPerson
+        name='Carlos'
+        debt='6.00'
+        status='Deve julho'
+        subtitle='Taylor fã s2'
+        avatar='/carlos.png'
+        statusTag={StatusTagEnum.WARN}
       />
       <CardPerson
         name='Taynara'
@@ -50,13 +52,6 @@ export const ListCards = () => {
         status='140 mil anos pagos'
         subtitle='Carlos tbm'
         avatar='henrique.jpg'
-      />
-      <CardPerson
-        name='Carlos'
-        debt='0.00'
-        status='Em dia, mas foi o último, decepção'
-        subtitle='Taylor fã s2'
-        avatar='/carlos.png'
       />
     </Grid>
   );
